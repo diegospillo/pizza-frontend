@@ -14,7 +14,7 @@ function signUp() {
                         Authorization: `Bearer ${response.access_token}`,
                     },
                 });
-                //console.log(res);
+                console.log(res);
                 Check_Account(res,id_classe);
             }catch (err){
                 console.log(err);
@@ -61,7 +61,7 @@ async function Check_Account(dati:any,id_classe:string){
 else{
   alert("Email non valida");
 }
-a_rd.click();
+//a_rd.click();
 }
 
   
