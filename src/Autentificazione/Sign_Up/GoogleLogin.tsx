@@ -61,7 +61,7 @@ async function Check_Account(dati:any,id_classe:string){
 else{
   alert("Email non valida");
 }
-//a_rd.click();
+a_rd.click();
 }
 
   
