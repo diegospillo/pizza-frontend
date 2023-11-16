@@ -1,0 +1,20 @@
+{
+    "name": "PizzApp",
+    "short_name": "PizzApp",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "https://static.vecteezy.com/system/resources/thumbnails/010/178/999/small/cartoon-small-pizza-file-free-png.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "https://static.vecteezy.com/system/resources/thumbnails/010/178/999/small/cartoon-small-pizza-file-free-png.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
+  
