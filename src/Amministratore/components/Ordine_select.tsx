@@ -4,7 +4,7 @@ interface Ordine {
 }
 
 function Select({data}: Ordine) {
-
+  if(data.length>0){
   const pizze = data.map((item:any)=>{
     return item.pizza + " - " + item.prezzo + "€"
   })
@@ -38,6 +38,12 @@ function Select({data}: Ordine) {
           })}
     </>
   );
+  }
+  else{
+    return(
+      <p style={{marginTop:"130px"}}>Non ci sono ordini</p>
+    );
+  }
 }
 
 
@@ -57,7 +63,7 @@ function get_prezzo(val:number,data:any[]){
   var somma = 0;
   for(let x=0;x<data.length;x++){
     if(data[val].nome==data[x].nome){
-      somma+=data[x].prezzo;
+      somma+=parseFloat(data[x].prezzo);
     }
   }
   return somma;

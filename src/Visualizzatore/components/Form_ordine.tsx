@@ -3,15 +3,17 @@ import Pizza_select from "./Pizza_select";
 
 
 interface Pizze {
+    client:string;
     data:any[];
 };
 
 
-function List({data}:Pizze){
+function List({client,data}:Pizze){
     const [costoTot, setCostoTot] = useState(0);
     return(
         <>
-        <form action="http://127.0.0.1:8000/check_ordine/" method="get">
+        <form action="https://pizzappbackend.onrender.com/insert_Ordini" method="get">
+          <input type="hidden" name="id" value={client}/>
         <div style={{marginTop:"20px"}}>
         <center>
         <h1 style={{marginLeft:"10px"}}>Fai il tuo ordine</h1>

@@ -13,7 +13,7 @@ function Select({data,costo_tot }: Pizze) {
     var selectDaVerificare = document.getElementById("selectBox"+id) as HTMLSelectElement;
     if(selectDaVerificare){
       var indiceSelezionato = selectDaVerificare.value;
-      //console.log(indiceSelezionato);
+      console.log(indiceSelezionato);
       return rest_string(indiceSelezionato);
     }
     return "null";

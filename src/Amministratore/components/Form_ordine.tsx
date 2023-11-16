@@ -11,8 +11,8 @@ function List({data}: Ordine) {
         <>
             <div style={{ marginTop: "20px" }}>
                 <center>
-                    <h1 style={{ marginLeft: "10px" }}>Ordine Classe</h1>
-                    <div id="Main_scroll" className="overflow-y-scroll border border-5 border-warning rounded" style={{ height: "350px", width: "fit-content", overflow: "auto", backgroundColor: "" }}>
+                    <h1 style={{ marginLeft: "10px" }}>Ordini Classe</h1>
+                    <div id="Main_scroll" className="overflow-y-scroll border border-5 border-warning rounded" style={{ height: "350px", width: "330px", overflow: "auto", backgroundColor: "" }}>
                         <Ordine_select data={data}></Ordine_select>
                     </div>
                 </center>
@@ -28,7 +28,7 @@ function Get_costo_tot(data: any[]) {
     let somma = 0;
 
     for (let i = 0; i < data.length; i++) {
-        somma += data[i].prezzo;
+        somma += parseFloat(data[i].prezzo);
     }
     return somma;
 }
