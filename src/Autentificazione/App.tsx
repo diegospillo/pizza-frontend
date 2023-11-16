@@ -25,8 +25,8 @@ function App() {
       <nav className="navbar bg-warning" data-bs-theme="dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/010/178/999/small/cartoon-small-pizza-file-free-png.png" alt="Logo" width="40" height="40" className="d-inline-block align-text-top"/>
-            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px"}}>Pizza</span>
+            <img src="https://www.midossi.edu.it/images/loghi-midossi/logo-midossi-150-150.png"/>
+            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px"}}>PizzApp</span>
           </a>
     </div>
       </nav>

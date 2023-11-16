@@ -19,7 +19,7 @@ function Navbar({client,ordini,stato_ord}:Dati_client){
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src="https://www.midossi.edu.it/images/loghi-midossi/logo-midossi-150-150.png" width="55px"/>
-            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px"}}> Pizza</span>
+            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px"}}> PizzApp</span>
           </a>
           <button className="navbar-toggler" onClick={()=>setoffCanvasVisibility(true)} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
