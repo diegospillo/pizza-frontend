@@ -26,7 +26,7 @@ function App() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src="https://www.midossi.edu.it/images/loghi-midossi/logo-midossi-150-150.png" width="55px"/>
-            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px",color:"black"}}>PizzApp</span>
+            <span className="navbar-brand mb-0 h1 align-text-top" style={{fontSize:"30px",color:"black"}}> PizzApp</span>
           </a>
     </div>
       </nav>

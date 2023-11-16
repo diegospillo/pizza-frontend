@@ -43,8 +43,8 @@ function signUp() {
 async function Check_Account(dati:any,id_classe:string){
     console.log(dati);
     const a_rd = document.getElementById("id_redirect") as HTMLLinkElement;
-    /*if(dati.data.hd){
-    if(dati.data.hd == "midossi.it"){*/
+    if(dati.data.hd){
+    if(dati.data.hd == "midossi.it"){
     const { data } = await axios.get(`https://pizzappbackend.onrender.com/insert_Studenti?id=${dati.data.sub}&nome=${dati.data.given_name}&cognome=${dati.data.family_name}&email=${dati.data.email}&classe=${id_classe}`);
     
     if(data.stato==true){
@@ -53,14 +53,14 @@ async function Check_Account(dati:any,id_classe:string){
     else{
         alert("Mi dispiace ma questo account è già registrato");
     }
-/*  }
+  }
   else{
     alert("Email non valida");
   }
 }
 else{
   alert("Email non valida");
-}*/
+}
 a_rd.click();
 }
 
