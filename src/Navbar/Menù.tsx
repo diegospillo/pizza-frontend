@@ -10,7 +10,7 @@ interface Props {
 
 function Offcanvas({client,ordini,onClose,stato,stato_ord}:Props){
     return(
-        <div className={"offcanvas offcanvas-end " + stato} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style={{backgroundColor:"white"}}>
+        <div className={"offcanvas offcanvas-end " + stato} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div className="offcanvas-header border-bottom border-3 border-danger">
           <h1>{client.nome+" "+client.cognome}</h1>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onClick={onClose}></button>
