@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar";
-import Ordini_classe from "../Amministratore/App";
+import Ordini_classe from "../Gestione_ordine_classe/App";
 import New_lista_pizze from "./components/Form_ordine";
 import {useState, useEffect} from "react";
 import axios from "axios";

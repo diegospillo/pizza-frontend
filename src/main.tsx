@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Visualizzatore from './Visualizzatore/App'
+import Visualizzatore from './Gestione_ordine_studente/App'
 import Autentificazione from './Autentificazione/App'
 import 'bootstrap/dist/css/bootstrap.css'
 
