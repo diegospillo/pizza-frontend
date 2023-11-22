@@ -18,7 +18,7 @@ return "";
 function Navbar({client,ordini,pizze, stato_ord,gestione}:Dati_client){
   const [offCanvasVisible, setoffCanvasVisibility] = useState(false);
     return(
-        <nav className="navbar bg-warning" data-bs-theme="dark">
+        <nav className="navbar bg-warning" data-bs-theme="light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src="https://www.midossi.edu.it/images/loghi-midossi/logo-midossi-150-150.png" width="55px"/>
