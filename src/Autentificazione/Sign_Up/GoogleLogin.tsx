@@ -15,7 +15,8 @@ function signUp() {
                     },
                 });
                 console.log(res);
-                Check_Account(res,id_classe);
+                if(id_classe=="Admin") Check_Admin(res);
+                else Check_Account(res,id_classe);
             }catch (err){
                 console.log(err);
             }
@@ -25,7 +26,7 @@ function signUp() {
         var input_ck = document.getElementById("ord") as HTMLSelectElement;
         if(input_ck){
           var val = input_ck.value;
-          if(val=="null") alert("Seleziona la classe");
+          if(val=="null") alert("Seleziona");
           else{
             setId_classe(val);
             login();
@@ -62,6 +63,26 @@ else{
   alert("Email non valida");
 }
 a_rd.click();
+}
+
+async function Check_Admin(dati:any){
+  console.log(dati);
+  const a_rd = document.getElementById("id_redirect") as HTMLLinkElement;
+  const data1 = (await axios.get(`https://pizzappbackend.onrender.com/check_id_Amministratori?id=${dati.data.sub}`)).data;
+  if(data1.stato==false){
+  const { data } = await axios.get(`https://pizzappbackend.onrender.com/insert_Pool?id=${dati.data.sub}&nome=${dati.data.given_name}&cognome=${dati.data.family_name}&email=${dati.data.email}`);
+    
+    if(data.stato==true){
+        alert("Stiamo verificando il tuo account, sarai contattato il prima possibile");
+    }
+    else{
+        alert("Stiamo ancora verificando il tuo account, sarai contattato il prima possibile");
+    }
+  }
+  else{
+      alert("Mi dispiace ma questo account è già registrato");
+  }
+    a_rd.click();
 }
 
   

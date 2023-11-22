@@ -29,7 +29,8 @@ function App({value_ord,SetValue_ord,data}:Classi) {
         style={{ marginTop: "20px", width: "250px" }}
         onChange={()=>selezionato()}
       >
-        <option value={"null"} selected>Seleziona Classe</option>
+        <option value={"null"} selected>Seleziona</option>
+        <option value={"Admin"}>Amministratore</option>
         {data.map((item:any) => (
               <option value={item.id} key={data.indexOf(item)}>
                 {item.anno+item.sezione}

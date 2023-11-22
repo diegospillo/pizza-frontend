@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 
 function App(){
-  const [Stato_ordine, setStato_ordine] = useState(false);
+  const [Stato_ordine, setStato_ordine] = useState(true);
   const [Lista_pizze, setLista_pizze] = useState([]);
   const [Ordini, setOrdini] = useState([]);
   const [client, setClient] = useState([]);
@@ -14,9 +14,9 @@ function App(){
   const fetchData = async ()=>{
     const idParam = new URLSearchParams(location.search).get("id");
     const stato = new URLSearchParams(location.search).get("stato");
+    const client_res = (await axios.get('https://pizzappbackend.onrender.com/get_Studente?id='+idParam)).data;
     const lista_pizze_res = (await axios.get('https://pizzappbackend.onrender.com/get_Pizze')).data;
     const ordini_res = (await axios.get('https://pizzappbackend.onrender.com/get_Ordini_Studente?id='+idParam)).data;
-    const client_res = (await axios.get('https://pizzappbackend.onrender.com/get_Studente?id='+idParam)).data;
     setLista_pizze(lista_pizze_res);
     setOrdini(ordini_res);
     setClient(client_res[0]);
@@ -32,7 +32,7 @@ function App(){
 
   return(
     <div>
-      <Navbar client={client} ordini={Ordini} stato_ord={Stato_ordine}></Navbar>
+      <Navbar client={client} ordini={Ordini} stato_ord={Stato_ordine} gestione={true} pizze={[]}></Navbar>
       {
       Stato_ordine === true && 
       <New_lista_pizze client={IDParam} data={Lista_pizze} ></New_lista_pizze>

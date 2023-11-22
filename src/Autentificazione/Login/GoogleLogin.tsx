@@ -37,7 +37,17 @@ async function Check_Account(dati:any){
         a_rd.click();
     }
     else{
+        const { data } = await axios.get(`https://pizzappbackend.onrender.com/check_id_Amministratori?id=${dati.data.sub}`);
+    
+    if(data.stato==true){
+        const date = new Date();
+        var data_oggi = date.getFullYear() + "-" + (date.getMonth()+ 1) + "-" + date.getDate();
+        a_rd.href = `/amministratore?id=${dati.data.sub}&data=${data_oggi}`;
+        a_rd.click();
+    }
+    else{
         alert("Account non registrato");
+    }
     }
 }
 

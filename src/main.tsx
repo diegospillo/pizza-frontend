@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Visualizzatore from './Gestione_ordine_studente/App'
+import Amministratore from './Amministratore/App'
 import Autentificazione from './Autentificazione/App'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -21,6 +22,13 @@ switch(path){
       </React.StrictMode>,
     )
     break;
+  case '/amministratore':
+      ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+        <React.StrictMode>
+          <Amministratore />
+        </React.StrictMode>,
+      )
+      break;
   default:
     ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <React.StrictMode>
