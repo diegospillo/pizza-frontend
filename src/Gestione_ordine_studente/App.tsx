@@ -10,11 +10,16 @@ function App(){
   const [Ordini, setOrdini] = useState([]);
   const [client, setClient] = useState([]);
   const [IDParam, setIDParam] = useState("null");
-  
+
   const fetchData = async ()=>{
     const idParam = new URLSearchParams(location.search).get("id");
     const stato = new URLSearchParams(location.search).get("stato");
     const client_res = (await axios.get('https://pizzappbackend.onrender.com/get_Studente?id='+idParam)).data;
+
+    if(client_res.lenght==0){
+      //Null
+    }
+    else{
     const lista_pizze_res = (await axios.get('https://pizzappbackend.onrender.com/get_Pizze')).data;
     const ordini_res = (await axios.get('https://pizzappbackend.onrender.com/get_Ordini_Studente?id='+idParam)).data;
     setLista_pizze(lista_pizze_res);
@@ -23,12 +28,12 @@ function App(){
     if(idParam) setIDParam(idParam);
     if(stato=="true") setStato_ordine(true);
     if(stato=="false") setStato_ordine(false);
+    }
   }
 
   useEffect(() => {
     fetchData();
   }, []);
-
 
   return(
     <div>

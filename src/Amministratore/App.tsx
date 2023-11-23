@@ -13,6 +13,10 @@ function App(){
     const idParam = new URLSearchParams(location.search).get("id");
     const Data_giorno = new URLSearchParams(location.search).get("data");
     const client_res = (await axios.get('https://pizzappbackend.onrender.com/get_Amministratore?id='+idParam)).data;
+    if(client_res.lenght==0){
+      //Null
+    }
+    else{
     const data_res = (await axios.get(`https://pizzappbackend.onrender.com/get_Ordini_All_Classi?data=${Data_giorno}`)).data;
     const lista_pizze_res = (await axios.get('https://pizzappbackend.onrender.com/get_Pizze')).data;
     setLista_pizze(lista_pizze_res);
@@ -21,6 +25,7 @@ function App(){
     if(idParam) setIDParam(idParam);
     var Date_element = document.getElementById("dateStandard") as HTMLDataElement;
     if(Date_element && Data_giorno)Date_element.value = Data_giorno;
+    }
   }
 
   useEffect(() => {
